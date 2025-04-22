@@ -1,11 +1,17 @@
 (ns sk.routes.proutes
   (:require
+   [sk.handlers.admin.productos.controller :as productos-controller]
    [sk.handlers.admin.provedores.controller :as provedores-controller]
    [compojure.core :refer [defroutes GET POST]]
    [sk.handlers.admin.users.controller :as users-controller]
    [sk.handlers.users.controller :as users-dashboard]))
 
 (defroutes proutes
+  (GET "/admin/productos" params [] (productos-controller/productos params))
+  (GET "/admin/productos/edit/:id" [id] (productos-controller/productos-edit id))
+  (POST "/admin/productos/save" params [] (productos-controller/productos-save params))
+  (GET "/admin/productos/add" params [] (productos-controller/productos-add params))
+  (GET "/admin/productos/delete/:id" [id] (productos-controller/productos-delete id))
   (GET "/admin/provedores" params [] (provedores-controller/provedores params))
   (GET "/admin/provedores/edit/:id" [id] (provedores-controller/provedores-edit id))
   (POST "/admin/provedores/save" params [] (provedores-controller/provedores-save params))

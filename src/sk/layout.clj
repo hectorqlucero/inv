@@ -13,6 +13,7 @@
           (= (user-level) "S"))
      (list
       [:li [:a.dropdown-item {:href "/admin/provedores"} "Provedores"]]
+      [:li [:a.dropdown-item {:href "/admin/productos"} "Productos"]]
       (when (= (user-level) "S")
         [:li [:a.dropdown-item {:href "/admin/users"} "Usuarios"]])))))
 
