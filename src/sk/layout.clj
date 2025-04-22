@@ -12,7 +12,7 @@
           (= (user-level) "A")
           (= (user-level) "S"))
      (list
-      nil
+      [:li [:a.dropdown-item {:href "/admin/provedores"} "Provedores"]]
       (when (= (user-level) "S")
         [:li [:a.dropdown-item {:href "/admin/users"} "Usuarios"]])))))
 
