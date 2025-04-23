@@ -16,7 +16,9 @@
       [:li [:a.dropdown-item {:href "/admin/productos"} "Productos"]]
       [:li [:a.dropdown-item {:href "/admin/inventario"} "Inventario"]]
       (when (= (user-level) "S")
-        [:li [:a.dropdown-item {:href "/admin/users"} "Usuarios"]])))))
+        (list
+         [:li [:a.dropdown-item {:href "/icambios"} "Cambios del Inventario"]]
+         [:li [:a.dropdown-item {:href "/admin/users"} "Usuarios"]]))))))
 
 (defn menus-private []
   (list

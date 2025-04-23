@@ -1,5 +1,6 @@
 (ns sk.routes.proutes
   (:require
+   [sk.handlers.icambios.controller :as icambios-dashboard]
    [sk.handlers.admin.movimientos.controller :as movimientos-controller]
    [sk.handlers.admin.inventario.controller :as inventario-controller]
    [sk.handlers.admin.productos.controller :as productos-controller]
@@ -9,6 +10,7 @@
    [sk.handlers.users.controller :as users-dashboard]))
 
 (defroutes proutes
+  (GET "/icambios" params [] (icambios-dashboard/icambios params))
   (GET "/admin/movimientos" params [] (movimientos-controller/movimientos params))
   (GET "/admin/movimientos/edit/:id" [id] (movimientos-controller/movimientos-edit id))
   (POST "/admin/movimientos/save" params [] (movimientos-controller/movimientos-save params))
