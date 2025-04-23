@@ -37,7 +37,7 @@
       [:ul.navbar-nav.ms-auto
        [:li.nav-item [:a.nav-link.active {:href "/"
                                           :aria-current "page"} "Inicio"]]
-       [:li.nav-item [:a.nav-link {:href "/users"} "Dashboard"]]
+       [:li.nav-item [:a.nav-link {:href "/admin/movimientos"} "Movimientos"]]
        (when
         (or
          (= (user-level) "U")

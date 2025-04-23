@@ -1,5 +1,6 @@
 (ns sk.routes.proutes
   (:require
+   [sk.handlers.admin.movimientos.controller :as movimientos-controller]
    [sk.handlers.admin.inventario.controller :as inventario-controller]
    [sk.handlers.admin.productos.controller :as productos-controller]
    [sk.handlers.admin.provedores.controller :as provedores-controller]
@@ -8,6 +9,11 @@
    [sk.handlers.users.controller :as users-dashboard]))
 
 (defroutes proutes
+  (GET "/admin/movimientos" params [] (movimientos-controller/movimientos params))
+  (GET "/admin/movimientos/edit/:id" [id] (movimientos-controller/movimientos-edit id))
+  (POST "/admin/movimientos/save" params [] (movimientos-controller/movimientos-save params))
+  (GET "/admin/movimientos/add" params [] (movimientos-controller/movimientos-add params))
+  (GET "/admin/movimientos/delete/:id" [id] (movimientos-controller/movimientos-delete id))
   (GET "/admin/inventario" params [] (inventario-controller/inventario params))
   (GET "/admin/inventario/edit/:id" [id] (inventario-controller/inventario-edit id))
   (POST "/admin/inventario/save" params [] (inventario-controller/inventario-save params))

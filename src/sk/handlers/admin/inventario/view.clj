@@ -29,7 +29,7 @@
                   :options (productos-options)})
    (build-field {:label "CANTIDAD"
                  :type "number"
-                 :min "1"
+                 :min "0"
                  :max "10000"
                  :step "1"
                  :id "cantidad"
