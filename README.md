@@ -6,10 +6,11 @@ Systema de inventarios
 2. MySQL instalado y configurado con una contraseña
 3. Leiningen instalado. https://leiningen.org
 4. vscode instalado con la extension calva:clojure
+5. dbeaver como cliente de MySQL
 
 ## Como usar la libreria
 1. Clonar este repositorio en su maquina
-2. Crear una base de datos en su cliente favorito de mysql, llamar la base de datos "inv"
+2. Crear una base de datos con dbeaver, llamar la base de datos "inv"
 3. Usar el dump en sql para actualizar la base de datos.  Usar el cliente dbeaver.
 4. Renombrar **resources/private/config_example** a **config.clj**
 6. Configurar todas las **xxxxx** con la informacion correcta
