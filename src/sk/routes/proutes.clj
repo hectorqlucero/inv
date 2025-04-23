@@ -16,6 +16,7 @@
   (POST "/admin/movimientos/save" params [] (movimientos-controller/movimientos-save params))
   (GET "/admin/movimientos/add" params [] (movimientos-controller/movimientos-add params))
   (GET "/admin/movimientos/delete/:id" [id] (movimientos-controller/movimientos-delete id))
+  (GET "/inventario/maximo/:id" [id] (movimientos-controller/get-maximo id))
   (GET "/admin/inventario" params [] (inventario-controller/inventario params))
   (GET "/admin/inventario/edit/:id" [id] (inventario-controller/inventario-edit id))
   (POST "/admin/inventario/save" params [] (inventario-controller/inventario-save params))

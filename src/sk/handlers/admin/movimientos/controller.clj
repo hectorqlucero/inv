@@ -1,6 +1,7 @@
 (ns sk.handlers.admin.movimientos.controller
   (:require
    [sk.handlers.admin.movimientos.model :refer [actualizar-inventario
+                                                get-inventario-por-producto
                                                 get-movimientos
                                                 get-movimientos-id]]
    [sk.handlers.admin.movimientos.view :refer [movimientos-add-view
@@ -10,6 +11,13 @@
    [sk.layout :refer [application error-404]]
    [sk.models.crud :refer [build-form-delete build-form-save]]
    [sk.models.util :refer [get-session-id user-level]]))
+
+(defn get-maximo
+  [producto-id]
+  (let [maximo (get-inventario-por-producto (Integer. producto-id))]
+    {:status 200
+     :headers {"Content-Type" "text/html"}
+     :body (str maximo)}))
 
 (defn movimientos [_]
   (let [title "Movimientos"
@@ -65,4 +73,5 @@
       (error-404 "No se pudo procesar el record!" "/admin/movimientos"))))
 
 (comment
+  (get-maximo "1")
   (actualizar-inventario "1" "compra" "1"))

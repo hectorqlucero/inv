@@ -1,7 +1,8 @@
 (ns sk.handlers.admin.movimientos.view
   (:require
    [sk.handlers.admin.movimientos.model :refer [productos-options
-                                                tipo_movimiento-options]]
+                                                tipo_movimiento-options
+                                                get-inventario-por-producto]]
    [sk.models.form :refer [build-field build-hidden-field build-modal-buttons
                            build-select form]]
    [sk.models.grid :refer [build-grid build-modal modal-script]]))
@@ -76,4 +77,41 @@
 
 (defn movimientos-modal-script
   []
-  (modal-script))
+  (list
+   [:script
+    "
+ $(document).ready(function() {
+  function getMaximo(url) {
+    return $.get(url).then(function(response) {
+      return parseInt(response, 10);
+    });
+  }
+
+  $('form').submit(function(e) {
+    e.preventDefault();
+    var producto_id = $('#producto_id').val();
+    var tipo_movimiento = $('#tipo_movimiento').val();
+    var cantidad = $('#cantidad').val();
+    var url = '/inventario/maximo/' + producto_id;
+
+    getMaximo(url).then(function(maximo) {
+      var forma_cantidad = parseInt(cantidad,10);
+      $('.error').remove();
+      if (tipo_movimiento == 'venta') {
+       if (forma_cantidad > maximo) {
+        $('#cantidad').after(
+          '<span class=\"text-danger\"> Este campo no puede exceder '+ maximo +' que es el total en existencia</span>'
+        );
+       }
+      } else {
+       if (forma_cantidad <= 0) then
+        $('#cantidad').after(
+         '<span class=\"text-danger\"> Este campo debe de ser mayor a 0</span>'
+        );
+      }
+    });
+  });
+});
+
+     "]
+   (modal-script)))
