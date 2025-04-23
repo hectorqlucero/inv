@@ -11,7 +11,7 @@ Systema de inventarios
 ## Como usar la libreria
 1. Clonar este repositorio en su maquina
 2. Crear una base de datos con dbeaver, llamar la base de datos "inv"
-3. Usar el dump en sql para actualizar la base de datos.  Usar el cliente dbeaver.
+3. Usar el dump en **sql** para actualizar la base de datos.  Usar el cliente dbeaver.
 4. Renombrar **resources/private/config_example** a **config.clj**
 6. Configurar todas las **xxxxx** con la informacion correcta
 7. Click en el icono de la barra de estado abajo **REPL** para iniciar un repl. Usar la opción **Start your project with a REPL and connect (a.k.a. jack-in)**
