@@ -4,7 +4,7 @@
    [noir.session :as session]
    [noir.util.crypt :as crypt]
    [sk.handlers.home.model :refer [get-user get-users update-password]]
-   [sk.handlers.home.view :refer [change-password-view main-view]]
+   [sk.handlers.home.view :refer [change-password-view home-view main-view]]
    [sk.layout :refer [application error-404]]
    [sk.models.util :refer [get-session-id]]))
 
@@ -14,7 +14,7 @@
         ok (get-session-id)
         js nil
         content (if (> (get-session-id) 0)
-                  nil
+                  (home-view)
                   [:h2.text-primary "clic en Entrar al sitio!"])]
     (application title ok js content)))
 
