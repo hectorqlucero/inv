@@ -23,11 +23,3 @@ Systema de inventarios
 09. Correr la pagina:
     * `http:localhost:3000` en tu browser favorito
 10. Entrar a la pagina usando el usuario **sistema@gmail.com** con la contraseña **sistema**.
-
-## Video de demostración
-
-[Video tutorial](https://youtu.be/Ifnugf-dDsg)
-
-## Simple roladex - demostración un poco mas avanzada
-
-[Video Simple Roladex](https://youtu.be/TBArVXx3gl4)
