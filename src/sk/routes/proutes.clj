@@ -1,5 +1,12 @@
 (ns sk.routes.proutes
   (:require
+   [sk.handlers.reportes.hoy.controller :as hoy-dashboard]
+   [sk.handlers.reportes.maximo.controller :as maximo-dashboard]
+   [sk.handlers.reportes.ventas.controller :as ventas-dashboard]
+   [sk.handlers.reportes.valor.controller :as valor-dashboard]
+   [sk.handlers.reportes.reordenar.controller :as reordenar-dashboard]
+   [sk.handlers.reportes.movimientos.controller :as movimientos-dashboard]
+   [sk.handlers.reportes.niveles.controller :as niveles-dashboard]
    [sk.handlers.icambios.controller :as icambios-dashboard]
    [sk.handlers.admin.movimientos.controller :as movimientos-controller]
    [sk.handlers.admin.inventario.controller :as inventario-controller]
@@ -10,6 +17,13 @@
    [sk.handlers.users.controller :as users-dashboard]))
 
 (defroutes proutes
+  (GET "/reportes/hoy" params [] (hoy-dashboard/hoy params))
+  (GET "/reportes/maximo" params [] (maximo-dashboard/maximo params))
+  (GET "/reportes/ventas" params [] (ventas-dashboard/ventas params))
+  (GET "/reportes/valor" params [] (valor-dashboard/valor params))
+  (GET "/reportes/reordenar" params [] (reordenar-dashboard/reordenar params))
+  (GET "/reportes/movimientos" params [] (movimientos-dashboard/movimientos params))
+  (GET "/reportes/niveles" params [] (niveles-dashboard/niveles params))
   (GET "/icambios" params [] (icambios-dashboard/icambios params))
   (GET "/admin/movimientos" params [] (movimientos-controller/movimientos params))
   (GET "/admin/movimientos/edit/:id" [id] (movimientos-controller/movimientos-edit id))
