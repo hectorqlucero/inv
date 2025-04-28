@@ -13,6 +13,7 @@ FROM icambios
     JOIN inventario on inventario.id = icambios.inventario_id
     JOIN provedores on provedores.id = inventario.provedor_id
     JOIN productos on productos.id = inventario.producto_id
+    ORDER BY icambios.fecha desc
 "))
 
 (defn get-icambios
