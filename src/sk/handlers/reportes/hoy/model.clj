@@ -1,5 +1,6 @@
 (ns sk.handlers.reportes.hoy.model
-  (:require [sk.models.crud :refer [db Query]]))
+  (:require [sk.models.crud :refer [Query db]]
+            [clojure.string :as st]))
 
 (def get-hoy-sql
   (str
@@ -16,6 +17,3 @@
 (defn get-hoy
   []
   (Query db get-hoy-sql))
-
-(comment
-  (get-hoy))

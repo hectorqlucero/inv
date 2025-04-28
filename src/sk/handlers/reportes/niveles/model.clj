@@ -1,5 +1,6 @@
 (ns sk.handlers.reportes.niveles.model
-  (:require [sk.models.crud :refer [db Query]]))
+  (:require [sk.models.crud :refer [Query db]]
+            [clojure.string :as st]))
 
 (def get-niveles-sql
   (str
@@ -15,6 +16,3 @@
 (defn get-niveles
   []
   (Query db get-niveles-sql))
-
-(comment
-  (get-niveles))

@@ -1,13 +1,9 @@
 (ns sk.handlers.admin.productos.controller
-  (:require
-   [sk.handlers.admin.productos.model :refer [get-productos get-productos-id]]
-   [sk.handlers.admin.productos.view :refer [productos-add-view
-                                             productos-edit-view
-                                             productos-modal-script
-                                             productos-view]]
-   [sk.layout :refer [application error-404]]
-   [sk.models.crud :refer [build-form-delete build-form-save]]
-   [sk.models.util :refer [get-session-id user-level]]))
+  (:require [sk.layout :refer [application error-404]]
+            [sk.models.util :refer [get-session-id user-level]]
+            [sk.models.crud :refer [build-form-save build-form-delete]]
+            [sk.handlers.admin.productos.model :refer [get-productos get-productos-id]]
+            [sk.handlers.admin.productos.view :refer [productos-view productos-edit-view productos-add-view productos-modal-script]]))
 
 (defn productos [_]
   (let [title "Productos"
@@ -57,4 +53,3 @@
     (if (= result true)
       (error-404 "Record se processo correctamente!" "/admin/productos")
       (error-404 "No se pudo procesar el record!" "/admin/productos"))))
-

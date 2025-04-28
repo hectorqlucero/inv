@@ -12,4 +12,3 @@
         rows (get-icambios)
         content (icambios-view title rows)]
     (application title ok js content)))
-

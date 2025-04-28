@@ -1,5 +1,6 @@
 (ns sk.handlers.reportes.valor.model
-  (:require [sk.models.crud :refer [db Query]]))
+  (:require [sk.models.crud :refer [Query db]]
+            [clojure.string :as st]))
 
 (def get-valor-sql
   (str
@@ -19,6 +20,3 @@
 (defn get-valor
   []
   (Query db get-valor-sql))
-
-(comment
-  (get-valor))

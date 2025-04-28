@@ -1,5 +1,6 @@
 (ns sk.handlers.reportes.ventas.model
-  (:require [sk.models.crud :refer [db Query]]))
+  (:require [sk.models.crud :refer [Query db]]
+            [clojure.string :as st]))
 
 (def get-ventas-sql
   (str
@@ -20,6 +21,3 @@
 (defn get-ventas
   []
   (Query db get-ventas-sql))
-
-(comment
-  (get-ventas))

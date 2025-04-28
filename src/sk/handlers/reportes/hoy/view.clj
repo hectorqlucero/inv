@@ -1,6 +1,5 @@
 (ns sk.handlers.reportes.hoy.view
-  (:require
-   [sk.models.grid :refer [build-dashboard]]))
+  (:require [sk.models.grid :refer [build-dashboard]]))
 
 (defn hoy-view
   [title rows]

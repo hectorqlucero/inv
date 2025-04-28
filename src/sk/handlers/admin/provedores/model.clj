@@ -1,6 +1,6 @@
 (ns sk.handlers.admin.provedores.model
-  (:require
-   [sk.models.crud :refer [db Query]]))
+  (:require [sk.models.crud :refer [Query db]]
+            [clojure.string :as st]))
 
 (def get-provedores-sql
   (str
@@ -24,4 +24,3 @@ WHERE id = ?
 (defn get-provedores-id
   [id]
   (first (Query db [get-provedores-id-sql id])))
-

@@ -1,14 +1,14 @@
 (ns sk.routes.proutes
   (:require
-   [sk.handlers.reportes.hoy.controller :as hoy-dashboard]
-   [sk.handlers.reportes.maximo.controller :as maximo-dashboard]
-   [sk.handlers.reportes.ventas.controller :as ventas-dashboard]
-   [sk.handlers.reportes.valor.controller :as valor-dashboard]
-   [sk.handlers.reportes.reordenar.controller :as reordenar-dashboard]
-   [sk.handlers.reportes.movimientos.controller :as movimientos-dashboard]
-   [sk.handlers.reportes.niveles.controller :as niveles-dashboard]
-   [sk.handlers.icambios.controller :as icambios-dashboard]
+   [sk.handlers.reportes.maximo.controller :as maximo-reporte]
+   [sk.handlers.reportes.ventas.controller :as ventas-reporte]
+   [sk.handlers.reportes.hoy.controller :as hoy-reporte]
+   [sk.handlers.reportes.valor.controller :as valor-reporte]
+   [sk.handlers.reportes.reordenar.controller :as reordenar-reporte]
+   [sk.handlers.reportes.movimientos.controller :as movimientos-reporte]
+   [sk.handlers.reportes.niveles.controller :as niveles-reporte]
    [sk.handlers.admin.movimientos.controller :as movimientos-controller]
+   [sk.handlers.icambios.controller :as icambios-dashboard]
    [sk.handlers.admin.inventario.controller :as inventario-controller]
    [sk.handlers.admin.productos.controller :as productos-controller]
    [sk.handlers.admin.provedores.controller :as provedores-controller]
@@ -17,20 +17,20 @@
    [sk.handlers.users.controller :as users-dashboard]))
 
 (defroutes proutes
-  (GET "/reportes/hoy" params [] (hoy-dashboard/hoy params))
-  (GET "/reportes/maximo" params [] (maximo-dashboard/maximo params))
-  (GET "/reportes/ventas" params [] (ventas-dashboard/ventas params))
-  (GET "/reportes/valor" params [] (valor-dashboard/valor params))
-  (GET "/reportes/reordenar" params [] (reordenar-dashboard/reordenar params))
-  (GET "/reportes/movimientos" params [] (movimientos-dashboard/movimientos params))
-  (GET "/reportes/niveles" params [] (niveles-dashboard/niveles params))
-  (GET "/icambios" params [] (icambios-dashboard/icambios params))
+  (GET "/reportes/maximo" params [] (maximo-reporte/maximo params))
+  (GET "/reportes/ventas" params [] (ventas-reporte/ventas params))
+  (GET "/reportes/hoy" params [] (hoy-reporte/hoy params))
+  (GET "/reportes/valor" params [] (valor-reporte/valor params))
+  (GET "/reportes/reordenar" params [] (reordenar-reporte/reordenar params))
+  (GET "/reportes/movimientos" params [] (movimientos-reporte/movimientos params))
+  (GET "/reportes/niveles" params [] (niveles-reporte/niveles params))
   (GET "/admin/movimientos" params [] (movimientos-controller/movimientos params))
   (GET "/admin/movimientos/edit/:id" [id] (movimientos-controller/movimientos-edit id))
   (POST "/admin/movimientos/save" params [] (movimientos-controller/movimientos-save params))
   (GET "/admin/movimientos/add" params [] (movimientos-controller/movimientos-add params))
   (GET "/admin/movimientos/delete/:id" [id] (movimientos-controller/movimientos-delete id))
   (GET "/inventario/maximo/:id" [id] (movimientos-controller/get-maximo id))
+  (GET "/icambios" params [] (icambios-dashboard/icambios params))
   (GET "/admin/inventario" params [] (inventario-controller/inventario params))
   (GET "/admin/inventario/edit/:id" [id] (inventario-controller/inventario-edit id))
   (POST "/admin/inventario/save" params [] (inventario-controller/inventario-save params))

@@ -1,6 +1,5 @@
 (ns sk.handlers.reportes.maximo.view
-  (:require
-   [sk.models.grid :refer [build-dashboard]]))
+  (:require [sk.models.grid :refer [build-dashboard]]))
 
 (defn maximo-view
   [title rows]

@@ -1,6 +1,5 @@
 (ns sk.handlers.reportes.movimientos.view
-  (:require
-   [sk.models.grid :refer [build-dashboard]]))
+  (:require [sk.models.grid :refer [build-dashboard]]))
 
 (defn movimientos-view
   [title rows]

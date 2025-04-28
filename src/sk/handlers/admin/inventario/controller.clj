@@ -57,4 +57,3 @@
     (if (= result true)
       (error-404 "Record se processo correctamente!" "/admin/inventario")
       (error-404 "No se pudo procesar el record!" "/admin/inventario"))))
-

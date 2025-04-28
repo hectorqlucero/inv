@@ -1,6 +1,5 @@
 (ns sk.handlers.reportes.reordenar.view
-  (:require
-   [sk.models.grid :refer [build-dashboard]]))
+  (:require [sk.models.grid :refer [build-dashboard]]))
 
 (defn reordenar-view
   [title rows]

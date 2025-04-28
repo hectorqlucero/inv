@@ -1,5 +1,6 @@
 (ns sk.handlers.reportes.maximo.model
-  (:require [sk.models.crud :refer [db Query]]))
+  (:require [sk.models.crud :refer [Query db]]
+            [clojure.string :as st]))
 
 (def get-maximo-sql
   (str

@@ -1,5 +1,6 @@
 (ns sk.handlers.reportes.movimientos.model
-  (:require [sk.models.crud :refer [db Query]]))
+  (:require [sk.models.crud :refer [Query db]]
+            [clojure.string :as st]))
 
 (def get-movimientos-sql
   (str
@@ -16,6 +17,3 @@
 (defn get-movimientos
   []
   (Query db get-movimientos-sql))
-
-(comment
-  (get-movimientos))

@@ -1,6 +1,5 @@
 (ns sk.handlers.reportes.ventas.view
-  (:require
-   [sk.models.grid :refer [build-dashboard]]))
+  (:require [sk.models.grid :refer [build-dashboard]]))
 
 (defn ventas-view
   [title rows]

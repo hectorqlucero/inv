@@ -1,5 +1,6 @@
 (ns sk.handlers.reportes.reordenar.model
-  (:require [sk.models.crud :refer [db Query]]))
+  (:require [sk.models.crud :refer [Query db]]
+            [clojure.string :as st]))
 
 (def get-reordenar-sql
   (str
@@ -18,6 +19,3 @@
 (defn get-reordenar
   []
   (Query db get-reordenar-sql))
-
-(comment
-  (get-reordenar))

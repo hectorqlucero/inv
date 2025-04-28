@@ -1,6 +1,5 @@
 (ns sk.handlers.reportes.valor.view
-  (:require
-   [sk.models.grid :refer [build-dashboard]]))
+  (:require [sk.models.grid :refer [build-dashboard]]))
 
 (defn valor-view
   [title rows]

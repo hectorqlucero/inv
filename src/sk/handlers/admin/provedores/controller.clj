@@ -1,13 +1,9 @@
 (ns sk.handlers.admin.provedores.controller
-  (:require
-   [sk.handlers.admin.provedores.model :refer [get-provedores get-provedores-id]]
-   [sk.handlers.admin.provedores.view :refer [provedores-add-view
-                                              provedores-edit-view
-                                              provedores-modal-script
-                                              provedores-view]]
-   [sk.layout :refer [application error-404]]
-   [sk.models.crud :refer [build-form-delete build-form-save]]
-   [sk.models.util :refer [get-session-id user-level]]))
+  (:require [sk.layout :refer [application error-404]]
+            [sk.models.util :refer [get-session-id user-level]]
+            [sk.models.crud :refer [build-form-save build-form-delete]]
+            [sk.handlers.admin.provedores.model :refer [get-provedores get-provedores-id]]
+            [sk.handlers.admin.provedores.view :refer [provedores-view provedores-edit-view provedores-add-view provedores-modal-script]]))
 
 (defn provedores [_]
   (let [title "Provedores"
@@ -57,4 +53,3 @@
     (if (= result true)
       (error-404 "Record se processo correctamente!" "/admin/provedores")
       (error-404 "No se pudo procesar el record!" "/admin/provedores"))))
-

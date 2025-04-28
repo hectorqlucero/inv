@@ -25,4 +25,3 @@ WHERE id = ?
 (defn get-productos-id
   [id]
   (first (Query db [get-productos-id-sql id])))
-

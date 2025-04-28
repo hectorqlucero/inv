@@ -86,32 +86,43 @@
       return parseInt(response, 10);
     });
   }
-
+  
   $('form').submit(function(e) {
     e.preventDefault();
+    var form = this; // Store reference to the form
     var producto_id = $('#producto_id').val();
     var tipo_movimiento = $('#tipo_movimiento').val();
     var cantidad = $('#cantidad').val();
     var url = '/inventario/maximo/' + producto_id;
-
+    
     getMaximo(url).then(function(maximo) {
-      var forma_cantidad = parseInt(cantidad,10);
+      var forma_cantidad = parseInt(cantidad, 10);
       $('.error').remove();
+      var isValid = true;
+      
       if (tipo_movimiento == 'venta') {
-       if (forma_cantidad > maximo) {
-        $('#cantidad').after(
-          '<span class=\"text-danger\"> Este campo no puede exceder '+ maximo +' que es el total en existencia</span>'
-        );
-       }
+        if (forma_cantidad > maximo) {
+          $('#cantidad').after(
+            '<span class=\"text-danger\"> Este campo no puede exceder '+ maximo +' que es el total en existencia</span>'
+          );
+          isValid = false;
+        }
       } else {
-       if (forma_cantidad <= 0) then
-        $('#cantidad').after(
-         '<span class=\"text-danger\"> Este campo debe de ser mayor a 0</span>'
-        );
+        if (forma_cantidad <= 0) {
+          $('#cantidad').after(
+            '<span class=\"text-danger\"> Este campo debe de ser mayor a 0</span>'
+          );
+          isValid = false;
+        }
+      }
+      
+      // If validation passes, submit the form
+      if (isValid) {
+        // Remove the event handler and submit
+        $(form).off('submit').trigger('submit');
       }
     });
   });
 });
-
      "]
    (modal-script)))
