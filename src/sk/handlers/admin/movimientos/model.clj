@@ -64,7 +64,6 @@ WHERE id = ?
    {:value "compra" :label "Compra"}])
 
 (comment
-  (actualizar-inventario 2 0)
   (tipo_movimiento-options)
   (productos-options)
   (get-inventario-por-producto 1))
