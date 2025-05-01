@@ -6,7 +6,7 @@
    [sk.models.util :refer [get-session-id]]))
 
 (defn inexistencia [_]
-  (let [title "Inexistencia"
+  (let [title "Inexistencia de productos"
         ok (get-session-id)
         js nil
         rows (get-inexistencia)
