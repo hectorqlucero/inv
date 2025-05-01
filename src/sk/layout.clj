@@ -16,6 +16,7 @@
       [:li [:a.dropdown-item {:href "/reportes/movimientos"} "Movimientos"]]
       [:li [:a.dropdown-item {:href "/reportes/reordenar"} "Re-Ordenar Inventario"]]
       [:li [:a.dropdown-item {:href "/reportes/valor"} "Valor del Inventario"]]
+      [:li [:a.dropdown-item {:href "/reportes/inexistencia"} "Inexistencia"]]
       [:li [:a.dropdown-item {:href "/reportes/hoy"} "Ventas Hoy"]]
       [:li [:a.dropdown-item {:href "/reportes/ventas"} "Ventas del Mes"]]
       [:li [:a.dropdown-item {:href "/reportes/maximo"} "Producto mas vendido en el Mes"]]
