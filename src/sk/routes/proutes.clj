@@ -1,5 +1,6 @@
 (ns sk.routes.proutes
   (:require
+   [sk.handlers.reportes.tipo.controller :as tipo-reporte]
    [sk.handlers.reportes.inexistencia.controller :as inexistencia-reporte]
    [sk.handlers.reportes.maximo.controller :as maximo-reporte]
    [sk.handlers.reportes.ventas.controller :as ventas-reporte]
@@ -18,6 +19,7 @@
    [sk.handlers.users.controller :as users-dashboard]))
 
 (defroutes proutes
+  (GET "/reportes/tipo" params [] (tipo-reporte/tipo params))
   (GET "/reportes/inexistencia" params [] (inexistencia-reporte/inexistencia params))
   (GET "/reportes/maximo" params [] (maximo-reporte/maximo params))
   (GET "/reportes/ventas" params [] (ventas-reporte/ventas params))

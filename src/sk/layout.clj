@@ -19,6 +19,7 @@
       [:li [:a.dropdown-item {:href "/reportes/inexistencia"} "Inexistencia"]]
       [:li [:a.dropdown-item {:href "/reportes/hoy"} "Ventas Hoy"]]
       [:li [:a.dropdown-item {:href "/reportes/ventas"} "Ventas del Mes"]]
+      [:li [:a.dropdown-item {:href "/reportes/tipo"} "Movimientos por Tipo"]]
       [:li [:a.dropdown-item {:href "/reportes/maximo"} "Producto mas vendido en el Mes"]]
       (when (= (user-level) "S")
         (list
